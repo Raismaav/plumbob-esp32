@@ -38,7 +38,7 @@ RGB hexToRGB(const String& hex) {
  * @param c RGB structure to store the result
  */
 void moodToRGB(const String& mood, RGB& c) {
-    if (mood == "happy")              c = {0x34, 0xC7, 0x59};
+    if (mood == "happy")              c = {0x00, 0xFF, 0x00};
     else if (mood == "inspired")      c = {0x2D, 0xD6, 0xC1};
     else if (mood == "focused")       c = {0x0A, 0x84, 0xFF};
     else if (mood == "confident")     c = {0xFF, 0x95, 0x00};

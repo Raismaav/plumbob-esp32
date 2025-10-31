@@ -268,7 +268,7 @@ select:hover{
     <div class="control-row">
       <div class="control-label">🎨 Custom Color</div>
       <div class="control-input">
-        <input type="color" id="picker" value="#34C759"/>
+        <input type="color" id="picker" value="#00FF00"/>
         <button class="btn-apply" id="apply">Apply</button>
       </div>
     </div>
@@ -302,7 +302,7 @@ select:hover{
 </div>
 <script>
 const moods=[
-  {k:"happy",label:"😊 Happy",hex:"#34C759"},
+  {k:"happy",label:"😊 Happy",hex:"#00FF00"},
   {k:"inspired",label:"✨ Inspired",hex:"#2DD6C1"},
   {k:"focused",label:"🎯 Focused",hex:"#0A84FF"},
   {k:"confident",label:"💪 Confident",hex:"#FF9500"},

@@ -12,9 +12,9 @@ enum AnimMode {
 
 // ====== SHARED STATE STRUCTURE ======
 struct SharedState {
-    uint8_t r = 0x34;       // Red component (default: green "happy")
-    uint8_t g = 0xC7;       // Green component
-    uint8_t b = 0x59;       // Blue component
+    uint8_t r = 0x00;       // Red component (default: pure green "happy")
+    uint8_t g = 0xFF;       // Green component
+    uint8_t b = 0x00;       // Blue component
     uint8_t brightness = 150;  // Overall brightness (0-255)
     AnimMode anim = SOLID;     // Current animation mode
 };
