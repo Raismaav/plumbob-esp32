@@ -276,8 +276,8 @@ select:hover{
     <div class="control-row">
       <div class="control-label">💡 Brightness</div>
       <div class="control-input">
-        <input type="range" id="brightness" min="0" max="255" value="150"/>
-        <span id="bval" class="brightness-val">150</span>
+        <input type="range" id="brightness" min="0" max="100" value="50"/>
+        <span id="bval" class="brightness-val">50%</span>
       </div>
     </div>
     
@@ -336,8 +336,16 @@ const brightness=document.getElementById('brightness');
 const bval=document.getElementById('bval');
 const anim=document.getElementById('anim');
 
+let brightnessTimeout;
 brightness.addEventListener('input',()=>{
-  bval.textContent=brightness.value;
+  bval.textContent=brightness.value+'%';
+  clearTimeout(brightnessTimeout);
+  brightnessTimeout=setTimeout(()=>{
+    const val255=Math.round(brightness.value*2.55);
+    fetch(`/set?brightness=${val255}`)
+      .then(()=>console.log('Brightness:',brightness.value+'%'))
+      .catch(e=>console.error('Error:',e));
+  },150);
 });
 
 document.getElementById('apply').onclick=()=>{
@@ -350,9 +358,9 @@ document.getElementById('apply').onclick=()=>{
 };
 
 document.getElementById('saveAnim').onclick=()=>{
-  fetch(`/set?brightness=${brightness.value}&anim=${anim.value}`)
+  fetch(`/set?anim=${anim.value}`)
     .then(()=>{
-      console.log('Settings saved');
+      console.log('Animation:',anim.value);
     })
     .catch(e=>console.error('Error:',e));
 };
