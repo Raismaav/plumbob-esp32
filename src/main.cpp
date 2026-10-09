@@ -12,8 +12,8 @@
 // ====== WIFI CONFIGURATION ======
 // Edit these values to customize your WiFi Access Point
 // If not modified, default values from config.h will be used
-const char* AP_SSID = DEFAULT_AP_SSID;     // WiFi network name
-const char* AP_PASS = DEFAULT_AP_PASS;     // WiFi password (empty = open network)
+const char* AP_SSID = "SimsPlumbob-rafael";     // WiFi network name
+const char* AP_PASS = "123456789";     // WiFi password (empty = open network)
 
 // ====== GLOBAL STATE ======
 SharedState S;          // LED state (color, brightness, animation)
